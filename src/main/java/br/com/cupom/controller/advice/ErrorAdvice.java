@@ -16,7 +16,6 @@ public class ErrorAdvice implements ErrorViewResolver {
     public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status,
                                          Map<String, Object> model) {
 
-        final ModelAndView modelAndView = new ModelAndView();
-        return new ModelAndView("index");
+        return new ModelAndView("error");
     }
 }

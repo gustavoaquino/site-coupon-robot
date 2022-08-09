@@ -18,6 +18,7 @@
         <ul class="menu">
             <li><a th:href="@{/}">Inicio</a></li>
             <li><a th:href="@{/lojas}">Lojas</a></li>
+            <li><a th:href="@{/ajuda}">Ajuda</a></li>
         </ul>
     </nav>
 </header>
@@ -25,24 +26,27 @@
 <section class="d-flex justify-content-center">
     <div class="container container-top">
         <div class="row">
-            <h4 class="less-bold"> <b> Atualmente </b> temos disponível <b> <th:block th:text="${qtdCoupon}"> 325 </th:block> cupons! </b> </h4>
+
+            <h4 class="less-bold"> Olá Seja <b> Bem-vindo! </b><b> Atualmente </b> temos <b> <th:block th:text="${qtdCoupon}"> 325 </th:block> cupons </b> disponível para uso. </h4>
             <h4> Principais <b> lojas </b> </h4>
 
             <th:block th:each="company : ${companyList}">
-            <div class="col-sm">
-                <div class="card">
-                    <a th:href="@{/lojas/} + ${company.uriSocialSoul}">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${company.nameCompany}">Nike</h5>
-                        <img class="rounded mx-auto d-block" align='center' th:src="${company.urlImageIcon}" />
+                <div class="col-sm">
+                    <div class="card">
+                        <a th:href="@{/lojas/} + ${company.uriSocialSoul}">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${company.nameCompany}">Nike</h5>
+                                <img class="rounded mx-auto d-block" align='center' th:src="${company.urlImageIcon}" />
+                            </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
-            </div>
             </th:block>
-
-
         </div>
+        <div class="row">
+            <div class="col"> <a th:href="@{/lojas}"> <button class="btn btn-outline-dark"> VER TODAS AS LOJAS </button> </a> </div>
+        </div>
+
     </div>
 </section>
 
@@ -70,6 +74,14 @@
         </div>
     </div>
 </section>
+
+<footer class="bg-dark text-center text-lg-start text-white">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:  <a class="text-white" href="#"> CupomParceiro </a>
+    </div>
+    <!-- Copyright -->
+</footer>
 
 </body>
 </html>

@@ -19,6 +19,7 @@
     <ul class="menu">
       <li><a th:href="@{../../}">Inicio</a></li>
       <li><a th:href="@{../lojas}">Lojas</a></li>
+      <li><a th:href="@{/ajuda}">Ajuda</a></li>
     </ul>
   </nav>
 </header>
@@ -28,20 +29,51 @@
     <div class="row">
       <h4> Todos os <b> cupons  <h4 th:text="${company.nameCompany}"> </b> </h4> </h4>
 
+      <th:block th:if="${couponList.isEmpty()}">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h5> Esse parceiro está com todos os cupons expirados no momento. </h5>
+            </div>
+          </div>
+        </div>
 
-      <th:block th:each="coupon, i : ${couponList}">
-      <div class="col-sm">
-        <div class="card text-center">
-          <a th:onclick="|showCode(document.getElementById('${coupon.id}').value)|" th:href="${coupon.linkCoupon}" target="_blank">
-          <div class="card-body">
-            <img class="rounded float-left" th:src="${coupon.company.urlImageIcon}" />
-            <h4 class="card-title" th:text="${coupon.description}" >12% de oferta para o dia dos pais</h4>
-            <p class="card-text">Valido até: <th:block th:text="${coupon.dateExpiration}"> </th:block> </p>
-            <input type="hidden" th:id="${coupon.id}" th:value="${coupon.codeCoupon}"/>
-              <a th:href="${coupon.linkCoupon}" target="_blank" rel="noopener noreferrer">
-              <button th:onclick="|showCode(document.getElementById('${coupon.id}').value)|" class="btn btn-outline-dark"> PEGAR CUPOM </button>
+        <div class="row">
+          <div class="col"> <a th:href="@{/lojas}"> <button class="btn btn-outline-dark"> VER TODAS AS LOJAS </button> </a> </div>
+        </div>
+
+      </th:block>
+      <th:block th:each="coupon : ${couponList}">
+        <div class="col-sm">
+          <div class="card text-center">
+            <a th:onclick="|showCode(document.getElementById('${coupon.id}').value)|" th:href="${coupon.linkCoupon}" target="_blank">
+              <div class="card-body">
+                <img class="rounded float-left" th:src="${coupon.company.urlImageIcon}" />
+                <h4 class="card-title" th:text="${coupon.description}" >12% de oferta para o dia dos pais</h4>
+                <p class="card-text">Valido até: <th:block th:text="${coupon.dateExpiration}"> </th:block> </p>
+                <input type="hidden" th:id="${coupon.id}" th:value="${coupon.codeCoupon}"/>
+                <a th:href="${coupon.linkCoupon}" target="_blank" rel="noopener noreferrer">
+                  <button th:onclick="|showCode(document.getElementById('${coupon.id}').value)|" class="btn btn-outline-dark"> PEGAR CUPOM </button>
+                </a>
+              </div>
             </a>
           </div>
+        </div>
+      </th:block>
+
+      <th:block th:if="${#lists.size(couponList)} % 3 == 2">
+      <div class="col-sm hidden">
+        <div class="card text-center">
+          <a  target="_blank">
+            <div class="card-body">
+              <img class="rounded float-left"  />
+              <h4 class="card-title"  >12% de oferta para o dia dos pais</h4>
+              <p class="card-text">Valido até: <</p>
+              <input type="hidden" />
+              <a  target="_blank" rel="noopener noreferrer">
+                <button> PEGAR CUPOM </button>
+              </a>
+            </div>
           </a>
         </div>
       </div>
@@ -50,5 +82,14 @@
     </div>
   </div>
 </section>
+
+<footer class="bg-dark text-center text-lg-start text-white">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:  <a class="text-white" href="#"> CupomParceiro </a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
 </body>
 </html>

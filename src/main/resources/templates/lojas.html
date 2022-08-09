@@ -10,38 +10,48 @@
 	<script src="scripts.js"> </script>
 </head>
 <body>
-	<header class="header">
-		<nav class="center-menu">
-			<a th:href="@{../}" class="logo">CupomParceiro</a>
-			<input class="menu-btn" type="checkbox" id="menu-btn">
-			<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-			<ul class="menu">
-				<li><a th:href="@{../}">Inicio</a></li>
-				<li><a th:href="@{/lojas}">Lojas</a></li>
-			</ul>
-		</nav>
-	</header>
+<header class="header">
+	<nav class="center-menu">
+		<a th:href="@{../}" class="logo">CupomParceiro</a>
+		<input class="menu-btn" type="checkbox" id="menu-btn">
+		<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+		<ul class="menu">
+			<li><a th:href="@{../}">Inicio</a></li>
+			<li><a th:href="@{/lojas}">Lojas</a></li>
+			<li><a th:href="@{/ajuda}">Ajuda</a></li>
+		</ul>
+	</nav>
+</header>
 
-	<section class="d-flex justify-content-center">
-		<div class="container container-top">
-			<div class="row">
-				<h4> Todas as lojas </h4>
+<section class="d-flex justify-content-center">
+	<div class="container container-top">
+		<div class="row">
+			<h4> Todas as <b>  lojas </b> </h4>
 
-				<th:block th:each="company : ${companyList}">
-					<div class="col-sm">
-						<div class="card">
-							<a th:href="@{/lojas/} + ${company.uriSocialSoul}">
+			<th:block th:each="company : ${companyList}">
+				<div class="col-sm">
+					<div class="card">
+						<a th:href="@{/lojas/} + ${company.uriSocialSoul}">
 							<div class="card-body">
 								<h5 class="card-title" th:text="${company.nameCompany}">Nike</h5>
 								<img class="rounded mx-auto d-block" align='center' th:src="${company.urlImageIcon}" />
 							</div>
-							</a>
-						</div>
+						</a>
 					</div>
-				</th:block>
+				</div>
+			</th:block>
 
-			</div>
 		</div>
-	</section>
+	</div>
+</section>
+
+<footer class="bg-dark text-center text-lg-start text-white">
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+		© 2022 Copyright:  <a class="text-white" href="#"> CupomParceiro </a>
+	</div>
+	<!-- Copyright -->
+</footer>
+
 </body>
 </html>

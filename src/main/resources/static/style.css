@@ -194,17 +194,12 @@ less-bold{
     font-weight:1;
 }
 
-footer {
-    width: 100%;
-    font-size: 14px;
-    font-style: normal;
-    text-align: center;
-    color: gray;
-    font-family: Century gothic, Verdana, Arial;
-    position: fixed;
-    bottom: 50;
+footer{
+    margin-top:150px;
+    background-color: #ffffff;
 }
 
-footer .version{
-	left: 2;
+.hidden{
+visibility:hidden;
+
 }
