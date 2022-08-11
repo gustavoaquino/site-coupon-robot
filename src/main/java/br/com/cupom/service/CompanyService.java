@@ -15,8 +15,8 @@ public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
-    public Optional<Company> findCompanyByName(String nameCompany){
-        return companyRepository.findCompanyByUriSocialSoul(nameCompany);
+    public Optional<Company> findCompanyByName(String uriSocialSoul){
+        return companyRepository.findCompanyByUriSocialSoul(uriSocialSoul);
     }
 
     public List<Company> findAllCompanies(){

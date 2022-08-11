@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name = "CUPOM.COMPANY")
+@Table(name = "COMPANY")
 public class Company {
 
     @Id
