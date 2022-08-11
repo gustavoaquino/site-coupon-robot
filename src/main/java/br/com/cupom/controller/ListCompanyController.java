@@ -24,7 +24,7 @@ public class ListCompanyController {
     private CouponService couponService;
 
     @GetMapping("/lojas/{name}")
-    public String getStoreById(@PathVariable("name") String nameCompany,  Model model) {
+    public String getStoreByNameCompany(@PathVariable("name") String nameCompany,  Model model) {
         final Optional<Company> company = companyService.findCompanyByName(nameCompany);
 
         if(company.isEmpty()){
@@ -41,7 +41,7 @@ public class ListCompanyController {
 
 
     @GetMapping("/lojas")
-    public String getStores(Model model) {
+    public String getStoreList(Model model) {
         final List<Company> companyList = companyService.findAllComapaniesOrderByName();
         model.addAttribute("companyList", companyList);
         return "lojas";
