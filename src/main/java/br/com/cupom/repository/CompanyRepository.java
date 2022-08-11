@@ -1,7 +1,6 @@
 package br.com.cupom.repository;
 
 import br.com.cupom.domain.Company;
-import org.checkerframework.checker.nullness.Opt;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
