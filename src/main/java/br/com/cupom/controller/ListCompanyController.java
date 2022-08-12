@@ -23,7 +23,7 @@ public class ListCompanyController {
     @Autowired
     private CouponService couponService;
 
-    @GetMapping("lojas/{name}")
+    @GetMapping("/lojas/{name}")
     public String getStoreByNameCompany(@PathVariable("name") String nameCompany,  Model model) {
         final Optional<Company> company = companyService.findCompanyByName(nameCompany);
 
@@ -40,7 +40,7 @@ public class ListCompanyController {
     }
 
 
-    @GetMapping("lojas")
+    @GetMapping("/lojas")
     public String getStoreList(Model model) {
         final List<Company> companyList = companyService.findAllComapaniesOrderByName();
         model.addAttribute("companyList", companyList);
