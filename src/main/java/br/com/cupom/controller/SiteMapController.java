@@ -20,7 +20,7 @@ public class SiteMapController {
     @Autowired
     private CompanyService companyService;
 
-    @GetMapping(value = "/sitemap.xml")
+    @GetMapping("/sitemap.xml")
     @ResponseBody
     public XmlUrlSet main() {
         final List<String> urlList = new ArrayList<>();
