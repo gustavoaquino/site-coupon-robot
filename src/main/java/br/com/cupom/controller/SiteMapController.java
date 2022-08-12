@@ -28,7 +28,7 @@ public class SiteMapController {
         urlList.add( "/lojas");
         urlList.add( "/ajuda");
 
-        final List<Company> companyList = this.companyService.findAllCompanies();
+        final List<Company> companyList = this.companyService.findAllComapaniesOrderByName();
 
         final List<String> companyUrlSiteMapList = new ArrayList<>();
 
