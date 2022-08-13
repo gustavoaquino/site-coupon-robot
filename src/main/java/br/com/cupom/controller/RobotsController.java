@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class RobotsController {
 
-    @GetMapping(value = {"/robots.txt", "/robot.txt"})
+    @GetMapping(value = {"/robots.txt", "/robot.txt", "/Robots.txt", "/Robot.txt"})
     @ResponseBody
     public String getRobotsTxt() {
         return "User-agent: *";
