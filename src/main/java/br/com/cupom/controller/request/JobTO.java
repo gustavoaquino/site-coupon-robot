@@ -6,5 +6,6 @@ import lombok.Data;
 public class JobTO {
 
     private String securityUuid;
+    private String companyUri;
 
 }

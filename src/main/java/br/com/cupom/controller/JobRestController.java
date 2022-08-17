@@ -34,7 +34,7 @@ public class JobRestController {
                 logJobService.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "Successfully started by Api "));
 
                 try {
-                    scheduledCouponService.executeFindCoupon();
+                    scheduledCouponService.executeFindCoupon(jobTO.getCompanyUri());
                     logJobService.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "finished with successfully by Api "));
                     return "Finalizado com sucesso!";
                 } catch (Exception e) {

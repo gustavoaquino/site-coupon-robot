@@ -29,8 +29,15 @@ public class ScheduledCouponService {
     @Autowired
     private LoginProperties loginProperties;
 
-    public void executeFindCoupon() throws GenericWorkerException, SeleniumException {
-        final List<Company> companyList = this.companyService.findAllCompanies();
+    public void executeFindCoupon(String uriCompany) throws GenericWorkerException, SeleniumException {
+        List<Company> companyList;
+
+        if(uriCompany != null) {
+            companyList = Collections.singletonList(this.companyService.findCompanyByName(uriCompany).get());
+        }else{
+            companyList = this.companyService.findAllCompanies();
+        }
+
         final List<String> couponDescriptionList = new ArrayList<>();
 
         final ChromeDriverBuilder builder = new ChromeDriverBuilder();
@@ -60,5 +67,4 @@ public class ScheduledCouponService {
             builder.getDriver().quit();
         }
     }
-
 }
