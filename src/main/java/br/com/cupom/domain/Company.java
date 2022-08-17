@@ -26,6 +26,9 @@ public class Company {
     @Column(name = "NAME_COMPANY")
     private String nameCompany;
 
+    @Column(name = "PRINCIPAL")
+    private boolean principal;
+
     @Column(name = "DATE_CREATED")
     private final Date dateCreated = new Date();
 
@@ -89,5 +92,13 @@ public class Company {
 
     public void setDateExcluded(Date dateExcluded) {
         this.dateExcluded = dateExcluded;
+    }
+
+    public boolean isPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(boolean principal) {
+        this.principal = principal;
     }
 }
