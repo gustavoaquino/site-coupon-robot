@@ -201,5 +201,8 @@ footer{
 
 .hidden{
 visibility:hidden;
+}
 
+.medium{
+    font-size:24px;
 }
