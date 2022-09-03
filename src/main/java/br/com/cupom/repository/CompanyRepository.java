@@ -11,10 +11,10 @@ import java.util.Optional;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
-    @Query(value = "SELECT * FROM CUPOM.COMPANY ORDER BY COMPANY.ID ASC LIMIT 6", nativeQuery = true)
+    @Query(value = "SELECT * FROM CUPOM.COMPANY ORDER BY ID ASC LIMIT 6", nativeQuery = true)
     List<Company> findAllLimit6ByOrderByIdAsc();
 
-    @Query(value = "SELECT * FROM CUPOM.COMPANY ORDER BY COMPANY.NAME_COMPANY ASC", nativeQuery = true)
+    @Query(value = "SELECT * FROM CUPOM.COMPANY ORDER BY NAME_COMPANY ASC", nativeQuery = true)
     List<Company> findAllCompanyByOrderByNameCompanyAsc();
 
     @Query(value = "SELECT * FROM CUPOM.COMPANY WHERE URI_SOCIAL_SOUL = ?", nativeQuery = true)
