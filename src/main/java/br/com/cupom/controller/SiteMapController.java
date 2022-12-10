@@ -17,7 +17,7 @@ import java.util.List;
 
 @Controller
 public class SiteMapController {
-    private static final String DOMAIN = "https://www.cupomparceiro.com.br";
+    private static final String DOMAIN = ""; //put your site in this place
 
     @Autowired
     private CompanyService companyService;
