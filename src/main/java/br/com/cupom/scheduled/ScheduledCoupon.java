@@ -31,20 +31,17 @@ public class ScheduledCoupon {
     @Autowired
     private LogJobService logJobFindCoupon;
 
-//    @Scheduled(cron = "0 0/1 * * * *")
-//    @Scheduled(fixedRate = 1)
-//    public void executeJobFindCoupon() {
-//
-//        logJobFindCoupon.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "Successfully started"));
-//
-//        try {
-//            scheduledCouponService.executeFindCoupon();
-//            logJobFindCoupon.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "finished with successfully "));
-//        }catch (Exception e){
-//            logJobFindCoupon.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "finished with error"));
-//        }
-//
-//        return;
-//    }
+    @Scheduled(cron = "0 0/3 * * * *")
+    public void executeJobFindCoupon() {
+
+        logJobFindCoupon.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "Successfully started"));
+
+        try {
+            scheduledCouponService.executeFindCoupon(null);
+            logJobFindCoupon.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "finished with successfully "));
+        }catch (Exception e){
+            logJobFindCoupon.saveLogJobFindCoupon(new LogJobFindCoupon(new Date(), "finished with error"));
+        }
+    }
 
 }

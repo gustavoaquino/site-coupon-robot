@@ -47,28 +47,6 @@ public class SiteMapController {
             sitemapGenerator.addPage(WebPage.builder().name(url).maxPriorityRoot().changeFreqDaily().lastModNow().build());
         }
 
-
-
-//        final List<String> urlList = new ArrayList<>();
-//        urlList.add("/");
-//        urlList.add( "/lojas");
-//        urlList.add( "/ajuda");
-//
-//        final List<Company> companyList = this.companyService.findAllComapaniesOrderByName();
-//
-//        final List<String> companyUrlSiteMapList = new ArrayList<>();
-//
-//        for(Company company : companyList){
-//            companyUrlSiteMapList.add("/lojas/" + company.getUriSocialSoul());
-//        }
-//
-//        urlList.addAll(companyUrlSiteMapList);
-//
-//        XmlUrlSet xmlUrlSet = new XmlUrlSet();
-//        for (String eachLink : urlList) {
-//            create(xmlUrlSet, eachLink, XmlUrl.Priority.HIGH);
-//        }
-
         return sitemapGenerator.toString();
     }
 
