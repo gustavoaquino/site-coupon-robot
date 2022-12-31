@@ -4,6 +4,14 @@
 - The  <b> site-coupon-robo </b> is a self sustaining site, which has a integration with  <b> socialsoul.com.vc </b> using a web scraping by selenium.
 - The site-coupon-robot uses a scheduled to look for new coupons and put them automatically inside the project
 
+## Environment Variables
+ - ${POSTGRESQL_HOST} 
+ - ${POSTGRESQL_USER}
+ - ${POSTGRESQL_PASS}
+ - ${SOCIALSOUL_USER} 
+ - ${SOCIALSOUL_PASS}
+ - ${API_SECURITY}
+ 
 
 
 <h2> Main Page </h2>
