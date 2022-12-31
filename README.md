@@ -24,6 +24,6 @@
   
   ![image](https://user-images.githubusercontent.com/37906911/210137061-d1899bb6-d8ef-4ffd-be61-c5ae55aeae37.png)
 
-~ <b> When a button is clicked </b>
+~ <b> When a button is clicked an alert is displayed </b>
 
 ![image](https://user-images.githubusercontent.com/37906911/210137085-f7c798a1-b462-409f-8b69-37045516abac.png)
