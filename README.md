@@ -1,5 +1,5 @@
 
- ## What's contains in this project?
+ ## What's in this project?
   - Spring Boot
   - PostgreSQL
   - Selenium WebDriver
