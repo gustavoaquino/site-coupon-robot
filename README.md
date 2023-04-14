@@ -6,8 +6,7 @@
   - Web Scraping
   - JPA/JDBC
   - REST API
-
- 
+  - Scheduled
 
 
 ## Introduction
