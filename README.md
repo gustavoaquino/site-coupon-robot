@@ -23,6 +23,7 @@
  - ${SOCIALSOUL_PASS}
  - ${API_SECURITY}
  - ${CHROMEDRIVER}
+ - ${CHROMEPATH}
  
 
 
